@@ -1,6 +1,8 @@
 # CHEERS
- 
+
 CHEERS (Chromatin Element Enrichment Ranking by Specificity) is a method to determine enrichment of annotations in GWAS significant loci. In addition to SNP-peak overlap, CHEERS takes into account peak properties as reflected by quantitative changes in read counts within peaks. 
+
+Note: This fork contains an optimisation of the enrichment step for use in Open Targets Genetics. Details for using this are in  	[README_OpenTargetsGenetics.md](README_OpenTargetsGenetics.md).
  
 ## **Requirements**
  
