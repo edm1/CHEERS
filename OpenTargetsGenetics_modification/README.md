@@ -15,7 +15,7 @@ conda env create -n cheers_otg --file environment.yaml
 
 # Activate environment, set RAM availability
 conda activate cheers_otg
-export PYSPARK_SUBMIT_ARGS="--driver-memory 50g pyspark-shell"
+export PYSPARK_SUBMIT_ARGS="--driver-memory 8g pyspark-shell"
 ```
 
 ### Usage
