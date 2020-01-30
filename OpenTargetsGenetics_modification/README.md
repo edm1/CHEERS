@@ -61,3 +61,29 @@ python OTG_computeEnrichment.py \
   --out_snp_peak_overlaps output/traitA_snpPeakOverlaps.tsv \
   --cores 4
 ```
+
+### Input data formats
+
+`--in_peaks` should be a TSV (with header) where first 3 columns are chr, start, end and rest of columns are the sample scores. E.g.
+
+```
+chr     start   end     ENCFF521LXH     ENCFF098TNV     ENCFF456KNS
+chr10   132175555       132175705       0.1325  0.0413  0.1102
+chr13   100721555       100721705       0.0932  0.0636  0.3428
+chr16   56067515        56067705        0.0216  0.072   0.0214
+chr17   47994795        47994947        0.1067  0.014   0.5189
+chr3    106408915       106409165       0.0697  0.1555  0.0914
+...
+```
+
+`--in_snps` should be a TSV (without header) where columns are variant ID, chromosome, position. Chromosome names must match those used in peak file.
+
+```
+1_150709618_C_T chr1    150709618
+1_172895043_G_A chr1    172895043
+10_35039427_GT_G        chr10   35039427
+12_40414428_A_G chr12   40414428
+14_68813162_A_G chr14   68813162
+16_28518628_T_C chr16   28518628
+...
+```
