@@ -6,13 +6,6 @@
 # Refactoring of CHEERS enrichment script
 #
 
-'''
-# Set SPARK_HOME and PYTHONPATH to use 2.4.0
-export PYSPARK_SUBMIT_ARGS="--driver-memory 8g pyspark-shell"
-export SPARK_HOME=/Users/em21/software/spark-2.4.0-bin-hadoop2.7
-export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-2.4.0-src.zip:$PYTHONPATH
-'''
-
 # Standard
 import argparse
 import os
