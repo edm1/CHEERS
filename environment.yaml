@@ -1,0 +1,8 @@
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pyarrow>=0.15
+  - pandas
+  - pyspark>=2.4
+  - scipy
