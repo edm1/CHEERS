@@ -345,8 +345,8 @@ observedMean = dict(zip(samplesList, observedMean))
 '''
 define parameters for descrete uniform distribution and calculate p-value
 '''
-N = len(normValues[sample])
-n = len(uniquePeaks)
+N = float(len(normValues[sample]))
+n = float(len(uniquePeaks))
 mean_sd = math.sqrt((N**2-1)/(12*n))
 mean_mean = (1+N)/2
 
@@ -361,7 +361,7 @@ create the txt file with the p-values
 '''
 pValueName = str(args.outdir) + str(args.trait) + '_disease_enrichment_pValues.txt'
 f = open(pValueName, 'a')
-for key, value in pValue.iteritems():
+for key, value in pValue.items():
     f.write(key + '\t' + str(value) + '\n')
 f.close()
 
@@ -370,7 +370,7 @@ create the txt file with the mean ranks
 '''
 meanName = str(args.outdir) + str(args.trait) + '_disease_enrichment_observedMeanRank.txt'
 f = open(meanName, 'w')
-for key,value in observedMean.iteritems():
+for key,value in observedMean.items():
     f.write(key + '\t' + str(value) + '\n')
 f.close()
 
@@ -382,10 +382,10 @@ end_time1 = time.time()
 running_time = (end_time1 - start_time1)
 
 logfileName = str(args.outdir) + str(args.trait) + ".log"
-logfile = open(logfileName, "w")
-print >> logfile, 'Total number of peaks\t%s' % (str(N))
-print >> logfile, 'Number of overlapping peaks\t%s' % (str(n))
-print >> logfile, 'Number of SNPs overlapping peaks\t%s' % (str(len(overlappedPeaks)))
-print >> logfile, 'Distribution mean\t%s' %  (str(mean_mean))
-print >> logfile, 'Distribution sd\t%s' %  (str(mean_sd))
-print >> logfile, 'Running time in seconds\t%s' % (running_time)
+with open(logfileName, "w") as out_h:
+    out_h.write('Total number of peaks\t%s' % (str(N)) + '\n')
+    out_h.write('Number of overlapping peaks\t%s' % (str(n)) + '\n')
+    out_h.write('Number of SNPs overlapping peaks\t%s' % (str(len(overlappedPeaks))) + '\n')
+    out_h.write('Distribution mean\t%s' %  (str(mean_mean)) + '\n')
+    out_h.write('Distribution sd\t%s' %  (str(mean_sd)) + '\n')
+    out_h.write('Running time in seconds\t%s' % (running_time) + '\n')
