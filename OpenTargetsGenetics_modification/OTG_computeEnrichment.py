@@ -35,6 +35,8 @@ def main():
         # Set the number of cores to use (only works in spark's local mode)
         .config("spark.master", "local[{}]".format(
             '*' if args.cores == -1 else args.cores))
+        # Increase the number of port retries
+        .config('spark.port.maxRetries', 512)
         .getOrCreate()
     )
     print('Spark version: ', spark.version)
